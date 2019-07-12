@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="viewport" content="width=device-width">
+		<title>Liga</title>
+		<link rel="stylesheet" href="css/all.css" type="text/css" />
+		<!--[if lte IE 8]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<!-- Place this tag in your head or just before your close body tag. -->
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<script type="text/javascript" src="js/jquery.main.js"></script>
+		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div id="wrapper" class="contracn-page">
+			<header id="header">
+				<div class="container-full">
+					<strong class="logo"><a href="index.html"></a></strong>
+					<nav id="nav">
+						<strong class="logo mob-logo"><a href="index.html"></a></strong>
+						<a class="btn-open" href="#"><span></span></a>
+						<ul class="menu">
+							<li><a href="#">Airdrop rules</a></li>
+							<li><a href="#">Smart Contract</a></li>
+							<li><a href="#">FAQ</a></li>
+						</ul>
+						<div class="contact-box">
+							<strong class="title-contact">Follow LIGA</strong>
+							<ul class="list-social">
+								<li class="tl"><a href="#"></a></li>
+								<li class="tw"><a href="#"></a></li>
+							</ul>
+							<div class="lang-box">
+								<a class="lang" href="#">en</a>
+								<ul class="list-lang">
+									<li><a href="#">ru</a></li>
+									<li><a href="#">ch</a></li>
+								</ul>
+							</div>
+							<a data-popup="#enter-popup" href="" class="btn-login">login</a>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<div id="main">
+				<section class="scheme-section">
+					<div class="container">
+						<h2 class="title">lIGA Smart contract</h2>
+						<div class="btn-holder">
+							<!-- <a href="#" class="btn-follow">
+								<img src="images/img-btn.png" alt="image description">
+							</a> -->
+							<!-- Place this tag where you want the button to render. -->
+							<a class="github-button" href="https://github.com/ligatoken" data-size="large" aria-label="Follow @ligatoken on GitHub">Follow @ligatoken</a>
+						</div>
+						<div class="desc">... is meant to ensure the transparency of every draw and full security of your funds</div>
+						<h3 class="title-scheme-block">Stages of each LIGA event</h3>
+						<div class="scheme-block">
+							<div class="item-scheme stage-0">
+								<span class="name-scheme">Stage 0 // Preparation</span>
+								<strong class="title-scheme">Definition of variables and functions</strong>
+								<div class="accordion">
+									<div class="item">
+										<strong class="head">Protocol constants</strong>
+										<div class="expanded">
+<code><pre>
+<em class="blue">let</em> waves = <em class="green">100000000</em>
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Event settings</strong>
+										<div class="expanded">
+<code><pre>
+<em class="blue">let</em> ligaCommission = <em class="green">4</em>
+<em class="blue">let</em> totalTeams = <em class="green">32</em>
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Parties public keys</strong>
+										<div class="expanded">
+<code><pre>
+<em class="blue">let</em> liga = <em class="blue">base58</em><em class="red">''</em>
+<em class="blue">let</em> oracle = <em class="blue">base58</em><em class="red">''</em>
+<em class="blue">let</em> leaseNode = <em class="blue">base58</em><em class="red">''</em>
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Event timeline</strong>
+										<div class="expanded">
+<code><pre>
+<em class="blue">let</em> eventEndsAtBlock = <em class="green">999</em>
+<em class="blue">let</em> winnerDeclarationInterval = <em class="green">999</em>
+<em class="blue">let</em> payoutInterval = <em class="green">999</em>
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Storage/Data functions</strong>
+										<div class="expanded">
+<code><pre>
+<em class="blue">func</em> getIntOr(key: <em class="light-blue">String</em>, default: <em class="light-blue">Int</em>) = <em class="blue">if</em> <em class="violet">isDefined</em>(<em class="violet"><em class="violet">getInteger</em></em>(this, key)) <em class="blue">then</em> <em class="violet">getInteger</em>Value(this, key) <em class="blue">else</em> default
+<em class="blue">func</em> getInt(key: <em class="light-blue">String</em>) = <em class="violet">getInteger</em>Value(this, key)
+<em class="blue">func</em> setInt(key: <em class="light-blue">String</em>, value: <em class="light-blue">Int</em>) = <em class="light-blue">DataEntry</em>(key, value)
+<em class="blue">func</em> setBytes(key: <em class="light-blue">String</em>, value: <em class="light-blue">ByteVector</em>) = <em class="light-blue">DataEntry</em>(key, value)
+<em class="blue">func</em> getBytes(key: <em class="light-blue">String</em>) = <em class="violet">getBinary</em>Value(this, key)
+<br>
+<em class="blue">func</em> isKeyDefined(key: <em class="light-blue">String</em>) =
+	<em class="violet">isDefined</em>(<em class="violet">getBinary</em>(this, key)) ||
+	<em class="violet">isDefined</em>(<em class="violet">getString</em>(this, key)) ||
+	<em class="violet">isDefined</em>(<em class="violet">getBoolean</em>(this, key)) ||
+	<em class="violet">isDefined</em>(<em class="violet">getInteger</em>(this, key))
+<br>
+<em class="blue">func</em> toSoldKey(assetId: <em class="light-blue">ByteVector</em>) = assetId.<em class="violet">toBase58String</em>() + <em class="red">"_SOLD"</em>
+<em class="blue">func</em> getSoldAmount(assetId: <em class="light-blue">ByteVector</em>) = assetId.toSoldKey().getIntOr(assetInfo(assetId).<em class="violet">extract</em>().totalAmount - <em class="violet">assetBalance</em>(this, assetId))
+<em class="blue">func</em> setSoldAmount(assetId: <em class="light-blue">ByteVector</em>) = assetId.toSoldKey().setInt(getSoldAmount(assetId))
+<br>
+<em class="blue">func</em> toBasePriceKey(assetId: <em class="light-blue">ByteVector</em>) = assetId.<em class="violet">toBase58String</em>() + <em class="red">"_BASE_PRICE"</em>
+<em class="blue">func</em> getBasePrice(teamId: <em class="light-blue">ByteVector</em>) = teamId.toBasePriceKey().getInt()
+<br>
+<em class="blue">func</em> toOffKey(assetId: <em class="light-blue">ByteVector</em>) = assetId.toBase58String() + <em class="red">"_OFF"</em>
+<em class="blue">func</em> off(teamId: <em class="light-blue">ByteVector</em>) = teamId.toOffKey().setInt(<em class="green">1</em>)
+<em class="blue">func</em> isOff(teamId: <em class="light-blue">ByteVector</em>) = teamId.toOffKey().getIntOr(<em class="green">0</em>)
+<br>
+<em class="blue">let</em> BALANCESNAPSHOT = <em class="red">"BALANCE_SNAPSHOT"</em>
+<em class="blue">func</em> getBalanceSnapshot() = BALANCESNAPSHOT.getIntOr(<em class="violet">wavesBalance</em>(this))
+<em class="blue">func</em> setBalanceSnapshot() = BALANCESNAPSHOT.setInt(getBalanceSnapshot())
+<br>
+<em class="blue">let</em> PRIZEPOOL = <em class="red">"PRIZE_POOL"</em>
+<em class="blue">func</em> getPrizePool() = PRIZEPOOL.getIntOr((getBalanceSnapshot() * (<em class="green">100</em>-ligaCommission))/<em class="green">100</em>)
+<em class="blue">func</em> setPrizePool() = PRIZEPOOL.setInt(getPrizePool())
+<br>
+<em class="blue">let</em> WINNER = <em class="red">"WINNER"</em>
+<em class="blue">func</em> getWinner() = WINNER.getBytes()
+<em class="blue">func</em> setWinner(winner: <em class="green">ByteVector</em>) = WINNER.setBytes(winner)
+<br>
+<em class="blue">let</em> TEAMSLEFT = <em class="red">"TEAMS_LEFT"</em>
+<em class="blue">func</em> getTeamsLeft() = TEAMSLEFT.getIntOr(totalTeams)
+<em class="blue">func</em> decTeamsLeft() = TEAMSLEFT.setInt(getTeamsLeft() - <em class="green">1</em>)
+<br>
+<em class="blue">let</em> TEAMCOUNTER = <em class="red">"TEAM_COUNTER"</em>
+<em class="blue">func</em> getTeamCounter() = TEAMCOUNTER.getIntOr(<em class="green">0</em>)
+<em class="blue">func</em> incTeamCounter() = TEAMCOUNTER.setInt(getTeamCounter() + <em class="green">1</em>)
+<br>
+<em class="blue">let</em> BASEPRIZEPOOL = <em class="red">"BASE_PRIZE_POOL"</em>
+<em class="blue">func</em> getBasePrizePool() = BASEPRIZEPOOL.getIntOr(<em class="green">0</em>)
+<em class="blue">func</em> addBasePrizePool(value: <em class="green">Int</em>) = BASEPRIZEPOOL.setInt(getBasePrizePool() + value)
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Event Stages</strong>
+										<div class="expanded">
+<code><pre>
+<em class="blue">let</em> STAGE<em class="green">1</em> = <em class="green">1</em>
+<em class="blue">let</em> STAGE<em class="green">2</em> = <em class="green">2</em>
+<em class="blue">let</em> STAGE<em class="green">31</em> = <em class="green">31</em>
+<em class="blue">let</em> STAGE<em class="green">32</em> = <em class="green">32</em>
+<em class="blue">let</em> STAGE<em class="green">33</em> = <em class="green">33</em>
+<em class="blue">let</em> STAGE<em class="green">4</em> = <em class="green">4</em>
+<em class="blue">let</em> STAGE = <em class="red">"STAGE"</em>
+<em class="blue">func</em> stage() = STAGE.getIntOr(STAGE<em class="green">1</em>)
+<em class="blue">func</em> goTo(stage: <em class="light-blue">Int</em>) = STAGE.setInt(stage)
+</pre></code>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item-scheme  stage-1">
+								<span class="name-scheme">Stage 1 // Event live</span>
+								<strong class="title-scheme">Event is live, tokens are allowed to sell and trade. Prize pool os leased to Node.</strong>
+								<div class="accordion">
+									<div class="item">
+										<strong class="head">Transactions verifier</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Verifier</em>(x)
+<em class="blue">func</em> verifier() = {
+   <em class="blue">match</em>(x) {
+        <em class="green"># Orders for token sale only possible as long as event runs</em>
+        <em class="green"># Price should be greater than base price for particular team</em>
+       <em class="blue">case</em> o:<em class="light-blue">Order</em> =>
+            stage() == STAGE<em class="green">1</em> &&
+            o.price >= getBasePrice(o.assetPair.amountAsset.<em class="violet">extract</em>()) &&
+            <em class="violet">sigVerify</em>(o.bodyBytes, o.proofs[<em class="green">0</em>], liga)
+        <em class="green"># Partner node is guaranteed to be leased each 100 waves as long as event is running</em>
+        <em class="blue">case</em> l:<em class="light-blue">LeaseTransaction</em> =>
+            stage() == STAGE<em class="green">1</em> &&
+            l.recipient == leaseNode.<em class="violet">addressFromPublicKey</em>() &&
+            l.amount > <em class="green">100</em> * waves
+        <em class="green"># Leasing will be cancelled as soon as event will be finished</em>
+        <em class="blue">case</em> cl: <em class="light-blue">LeaseCancelTransaction</em> =>
+            stage() != STAGE<em class="green">1</em>
+        <em class="green"># No other transactions are possible</em>
+       <em class="blue">case</em> _ => <em class="blue">false</em>
+   }
+}
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Crossing out losing teams (LIGA Oracle interface)</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> teamOff(teamId: <em class="light-blue">ByteVector</em>) = {
+    <em class="blue">if</em> stage() != STAGE<em class="green">1</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> i.callerPublicKey != oracle <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Only oracle could drop teams out off the game."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> !isKeyDefined(teamId.toBasePriceKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team is not found."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> isKeyDefined(teamId.toOffKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team is already off"</em>) <em class="blue">else</em>
+    <em class="blue">if</em> getTeamsLeft() == 1 <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"There is only 1 team left."</em>) <em class="blue">else</em>
+
+    WriteSet([
+        off(teamId),
+        decTeamsLeft()
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Transition to Stage 2</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> stage2() = {
+   <em class="blue">if</em> stage() != STAGE<em class="green">1</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+   <em class="blue">if</em> height <= eventEndsAtBlock <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Event is not yet finished."</em>) <em class="blue">else</em> 
+
+   WriteSet([
+        goTo(STAGE<em class="green">2</em>),
+        setBalanceSnapshot()
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item-scheme stage-2">
+								<span class="name-scheme">Stage 2 // Event finished</span>
+								<strong class="title-scheme">Event ended, LIGA can’t sell tokens after that point. Oracle is required to declare the winner within [winner declaration interval].</strong>
+								<div class="accordion">
+									<div class="item">
+										<strong class="head">Transition to Stage 3.1</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> stage31(winner: <em class="light-blue">ByteVector</em>) = {
+   <em class="blue">if</em> stage() != STAGE<em class="green">2</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> i.callerPublicKey != oracle <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Only oracle could declare the winner."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> <em class="violet">isDefined</em>(winner.toOffKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team that is off cannot be the winner."</em>) <em class="blue">else</em>
+
+    WriteSet([
+       goTo(STAGE<em class="green">31</em>),
+        setPrizePool(),
+        setWinner(winner),
+        setSoldAmount(winner)
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Transition to Stage 3.2</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> stage32(teamId: <em class="light-blue">ByteVector</em>) = {
+   <em class="blue">if</em> stage() != STAGE<em class="green">2</em> || stage() != STAGE<em class="green">32</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+   <em class="blue">if</em> height <= eventEndsAtBlock + winnerDeclarationInterval <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Oracle is still have time to declare a winner."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> !isKeyDefined(teamId.toBasePriceKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team is not found."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> <em class="violet">isDefined</em>(teamId.toOffKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team that is off cannot participate in rollback."</em>) <em class="blue">else</em>
+    <em class="blue">if</em> isKeyDefined(teamId.toSoldKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team sold amount already set."</em>) <em class="blue">else</em>
+
+    WriteSet([
+       goTo(STAGE<em class="green">32</em>),
+        setSoldAmount(teamId),
+        addBasePrizePool(getSoldAmount(teamId) * getBasePrice(teamId)),
+        incTeamCounter()
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+								</div>
+								<span class="arrow-left"></span>
+								<span class="arrow-right"></span>
+							</div>
+						<div class="row">
+							<div class="col-50">
+								<div class="item-scheme stage-3">
+									<span class="arrow-top"></span>
+									<span class="arrow-top-2"></span>
+								<span class="name-scheme">Stage 3.1 // Payout</span>
+								<strong class="title-scheme">Winner declared, payout is started, every holder of winner token allowed to exchange it for the portion of prize pool via payout() function.</strong>
+								<div class="accordion">
+									<div class="item">
+										<strong class="head">Payout function</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> payout() = {
+    <em class="blue">if</em> stage() != STAGE<em class="green">31</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+
+    <em class="blue">let</em> payment = i.payment.<em class="violet">extract</em>()
+
+    <em class="blue">if</em>  payment.assetId != getWinner() <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"You are allowed to get payout for the winner tokens only."</em>) <em class="blue">else</em>
+
+    <em class="blue">let</em> payout = getPrizePool() * payment.amount / getSoldAmount(getWinner())
+
+    <em class="light-blue">Transfer</em>Set([
+        ScriptTransfer(i.caller, payout, unit)
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+									<div class="item">
+										<strong class="head">Transition to Stage 4</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> stage4(recipient: <em class="light-blue">ByteVector</em>) = {
+  <em class="blue">if</em> stage() != STAGE<em class="green">31</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+  <em class="blue">if</em> height <= eventEndsAtBlock + winnerDeclarationInterval + payoutInterval <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Payout is not yet finished."</em>) <em class="blue">else</em>
+  <em class="blue">if</em> i.callerPublicKey != liga <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Only Liga could set the final stage and hold commission."</em>) <em class="blue">else</em>
+
+  ScriptResult(
+    WriteSet([
+      goTo(STAGE<em class="green">4</em>)
+    ]),
+    <em class="light-blue">Transfer</em>Set([
+      ScriptTransfer(recipient.<em class="violet">addressFromPublicKey</em>(), <em class="violet">wavesBalance</em>(this), unit)
+    ])
+  )
+}
+</pre></code>
+										</div>
+									</div>
+								</div>
+								<span class="arrow-angle"></span>
+							</div>
+							<div class="item-scheme stage-4">
+								<span class="name-scheme">Stage 4 // Event complete</span>
+								<strong class="title-scheme">Payout completed, LIGA takes commission to treasury.</strong>
+							</div>
+							</div>
+							<div class="col-50">
+								<div class="item-scheme stage-5">
+								<span class="name-scheme">Stage 3.2 // Preparation for Rollback</span>
+								<strong class="title-scheme">Winner is not declared and time interval passed. Taking snapshot of token amounts for every team. Counting for team bank proportion.</strong>
+								<div class="accordion">
+									<div class="item">
+										<strong class="head">Transition to Stage 3.3</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> stage33() = {
+   <em class="blue">if</em> stage() != STAGE<em class="green">32</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+   <em class="blue">if</em> getTeamCounter() != getTeamsLeft() <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"There are still teams without sold amount set."</em>) <em class="blue">else</em>
+
+    WriteSet([
+       goTo(STAGE<em class="green">33</em>)
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+								</div>
+								<span class="arrow-angle-2"></span>
+							</div>
+							<div class="item-scheme stage-6">
+								<span class="name-scheme">Stage 3.3 // Rollback</span>
+								<strong class="title-scheme">Winner is not declared and time interval passed, every holder of any team token allowed to exchange it for the portion of prize pool via rollback() function.</strong>
+								<div class="accordion">
+									<div class="item">
+										<strong class="head">Rollback function</strong>
+										<div class="expanded">
+<code><pre>
+<em class="orange">@Callable</em>(i)
+<em class="blue">func</em> rollback() = {
+    <em class="blue">if</em> stage() != STAGE<em class="green">33</em> <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Invalid current stage."</em>) <em class="blue">else</em>
+
+    <em class="blue">let</em> payment = i.payment.<em class="violet">extract</em>()
+    <em class="blue">let</em> teamId = payment.assetId.<em class="violet">extract</em>()
+    <em class="blue">if</em> !isKeyDefined(teamId.toBasePriceKey()) <em class="blue">then</em> <em class="violet">throw</em>(<em class="red">"Team is not found."</em>) <em class="blue">else</em>
+
+    <em class="blue">let</em> soldAmount = getSoldAmount(teamId)
+
+    <em class="blue">let</em> rollback = (getBalanceSnapshot() * getBasePrizePool() * payment.amount) / (getBasePrice(teamId) * soldAmount * soldAmount)
+
+    <em class="light-blue">Transfer</em>Set([
+        ScriptTransfer(i.caller, rollback, unit)
+    ])
+}
+</pre></code>
+										</div>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="rollback-block">
+							<h2 class="title">Rollback calculation</h2>
+							<div class="calculation-box">
+								<ul class="list-calculation">
+									<li class="calc-1">Team count</li>
+									<li class="calc-2">Total WAVES on event address</li>
+									<li class="calc-3">Tokens sold for team <em>n</em></li>
+									<li class="calc-4">Basic price for team <em>n</em> token</li>
+									<li class="calc-5">
+										<span>Basic price bank</span>
+										<span class="formula"><img src="images/img-07.png" alt="image description"></span>
+									</li>
+									<li class="calc-6">Tokens count</li>
+									<li class="calc-7">Team index</li>
+								</ul>
+								<div class="img-formula">
+									<img src="images/img-06.png" alt="image description">
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</section>
+				<section class="follow-section">
+					<div class="container">
+						<h1 class="title">Follow LIGA</h1>
+						<ul class="list-social">
+							<li class="tl"><a href="#"></a></li>
+							<li class="tw"><a href="#"></a></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<footer id="footer">
+				<div class="container">
+					<div class="footer-logo">
+						<strong class="logo"><a href="#"></a></strong>
+						<span class="prize-logo">Powered by <a href="#"></a></span>
+						<div class="copy show-decs">© 2017-2019 Liga Tokens</div>
+					</div>
+					<div class="footer-text">
+						<nav class="footer-nav">
+							<ul class="menu">
+								<li><a href="#">Airdrop rules</a></li>
+								<li><a href="#">Smart Contract</a></li>
+								<li><a href="#">FAQ</a></li>
+							</ul>
+							<div class="contact-box">
+								<ul class="list-social">
+									<li class="tl"><a href="#"></a></li>
+									<li class="tw"><a href="#"></a></li>
+								</ul>
+							</div>
+						</nav>
+						<div class="text-box">
+							<p>The Valve logo, the Steam logo, the logos and arts of CS:GO, Dota 2, Team Fortress 2, PUBG, along with all other registered trademarked logos, in-game items, and arts on DMarket are the property of their respective owners.</p>
+							<p>DMarket is in no way affiliated with or endorsed by Valve Corporation.</p>
+						</div>
+						<div class="copy show-mob">© 2017-2019 Liga Tokens</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div id="enter-popup" class="popup-holder">
+		    <div class="bg"></div>
+		    <div class="popup">
+		        <div class="close icon-close"></div>
+		        <div class="popup__scroll">
+		        	<div class="inner-box">
+		        		<div class="img-popup">
+			        		<img src="images/img-04.png" alt="image description">
+			        	</div>
+			        	<strong class="title-popup">You will need to login with Waves Keeper</strong>
+			        	<span class="subtitle-popup">Waves Keeper is an extension for your browser that gives you access to the Waves ecosystem</span>
+			        	<div class="btn-holder">
+			        		<a href="#" class="btn">Download Now</a>
+			        	</div>
+			        	<div class="logo-link">
+							<a href="#">
+								<img src="images/logo-3.png" alt="image description">
+							</a>
+						</div>
+						<div class="link-holder">
+							<a href="#" class="link">Learn More</a>
+						</div>
+		        	</div>
+		        </div>
+		    </div>
+		</div>
+	</body>
+</html>
