@@ -1388,8 +1388,9 @@ ul{
 }
 .desc-purchase{
 	padding: 0 20px 50px 10px;
-	overflow: hidden;
 	margin: -4px 0 0;
+	width: calc(100% - 178px);
+	float: right;
 }
 .desc-purchase .title{
 	margin: 0 0 11px;
@@ -1466,7 +1467,8 @@ ul{
 	.desc-purchase{
 		padding: 0 20px 50px 0;
 		margin: 0;
-		overflow: visible;
+		width: auto;
+		float: none;
 	}
 	.subtitle{
 		font-size: 23px;

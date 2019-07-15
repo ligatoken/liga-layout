@@ -5,6 +5,7 @@ $(document).ready(function(){
 	initAccordion();
 	initFlip();
 	initHoverAnimation ();
+	initIonRangeSlider();
 });
 
 function initTabs(){
@@ -87,4 +88,17 @@ function initHoverAnimation() {
 				setTimeout(function () {$('.inner-team').removeClass('animate-stop')},600);
 			}
 		})
+}
+function initIonRangeSlider() {
+	$( "#slider-range" ).slider({
+	range: "max",
+	min: 0,
+	 step: 0.5,
+	max: 790,
+	values: [ 269.50 ],
+	slide: function( event, ui ) {
+		$( "#amount" ).val(ui.values[ 0 ]+' waves');
+	}
+	});
+	$( "#amount" ).val( $("#slider-range" ).slider( "values", 0 )+' waves');
 }

@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/all.css" type="text/css" />
 		<!--[if lte IE 8]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.1.10.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.main.js"></script>
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</head>
@@ -64,7 +65,7 @@
 											<div class="logo-box">
 												<img src="images/img-logo-01.png" alt="image description">
 											</div>
-											<strong>buy</strong>
+											<strong><a data-popup="#feedback-popup" href="">buy</a></strong>
 											<a href="#" class="link">Copy ID</a>
 										</div>
 									</div>
@@ -85,7 +86,7 @@
 											<div class="logo-box">
 												<img src="images/img-logo-02.png" alt="image description">
 											</div>
-											<strong>buy</strong>
+											<strong><a data-popup="#feedback-popup" href="">buy</a></strong>
 											<a href="#" class="link">Copy ID</a>
 										</div>
 									</div>
@@ -183,7 +184,7 @@
 												<li>Tokens sold: <span>555 (5%)</span></li>
 											</ul>
 											<div class="btn-holder">
-												<a class="btn" href="#">Buy</a>
+												<a data-popup="#feedback-popup" href="" class="btn">Buy</a>
 											</div>
 											<a href="#" class="link">Copy ID</a>
 											<span class="vs">vs</span>
@@ -200,7 +201,7 @@
 												<li>Tokens sold: <span>555 (5%)</span></li>
 											</ul>
 											<div class="btn-holder">
-												<a class="btn" href="#">Buy</a>
+												<a data-popup="#feedback-popup" href="" class="btn">Buy</a>
 											</div>
 											<a href="#" class="link">Copy ID</a>
 										</div>
@@ -255,6 +256,50 @@
 					</div>
 				</div>
 			</footer>
+		</div>
+		<div id="feedback-popup" class="popup-holder">
+		    <div class="bg"></div>
+		    <div class="popup">
+		        <div class="close icon-close"></div>
+		        <div class="popup__scroll">
+	        		<div class="heading-popup">
+						<div class="num-block">
+							<div class="name-box">
+								<span>Buy Tokens</span>
+								<strong class="logo-text">
+									<a href="#">liverpool</a>
+								</strong>
+							</div>
+							<div class="amount">
+								<span>amount</span>
+								<strong class="number">135</strong>
+							</div>
+						</div>
+					</div>
+					<div class="body-popup">
+						<form action="#" class="form">
+							<div class="range-holder price-ranger">
+								<div class="slider">
+									<div class="input-holder">
+										<span class="name">price</span>
+										<input class="slide-input" type="text" id="amount"/>
+									</div>
+									<div id="slider-range"></div>
+								</div>
+							</div>
+							<div class="submit-holder">
+								<input class="btn" type="submit" value="Buy">
+							</div>
+							<div class="text">
+								<span>Powered by</span>
+								<a href="#">
+									<img src="images/logo-7.svg" alt="image description" width="90px">
+								</a>
+							</div>
+						</form>
+					</div>
+		        </div>
+		    </div>
 		</div>
 		<div id="enter-popup" class="popup-holder">
 		    <div class="bg"></div>
