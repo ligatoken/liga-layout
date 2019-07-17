@@ -2124,7 +2124,7 @@ code em{
 .winners-page .inner-main{
 	max-width: 600px;
 	margin: 0 auto;
-	padding: 62px 0 0;
+	padding: 62px 0 52px;
 }
 .winners-page .inner-main .logo-box{
 	margin: 0 auto 5px;
@@ -2142,7 +2142,7 @@ code em{
 	line-height: 1;
 	font-size: 53px;
 	text-transform: uppercase;
-	margin: 0 0 0;
+	margin: 0 0 28px;
 }
 .winners-page .main-title em{
 	font-style: normal;
@@ -2158,12 +2158,233 @@ code em{
 	color: #bfcaff;
 	font-size: 20px;
 	font-weight: 300;
-	line-height: 1.5;
+	line-height: 1.8;
 	text-transform: uppercase;
 	font-family: 'Roboto', sans-serif;
 	letter-spacing: 0.28em;
 }
-
+.congratulation-section{
+	padding: 30px 0 0;
+}
+.congratulation-section .heading{
+	max-width: 600px;
+	margin: 0 auto 70px;
+	text-align: center;
+}
+.congratulation-section .logo-box{
+	width: 110px;
+	margin: 0 auto 26px;
+}
+.congratulation-section .logo-box img{
+	width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+.congratulation-section .title-section{
+	color: #83c9ff;
+	font-size: 66px;
+	font-weight: 300;
+	line-height: 1.2;
+	margin: 0 0 59px;
+	text-transform: none;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 0.005em;
+}
+.congratulation-section .title-section small{
+	color: #bfcaff;
+	font-size: 20px;
+	display: block;
+	padding: 10px 0 0;
+	letter-spacing: 0;
+}
+.total-block{
+	margin: 0 auto 70px;
+	max-width: 723px;
+	min-height: 263px;
+	border-radius: 10px;
+	box-shadow: 0 21px 30.4px 1.6px rgba(0, 0, 0, 0.16);
+	position: relative;
+	padding: 30px 15px;
+	text-align: center;
+	background: url("../images/img-bg-09.png") no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.total-block:after{
+	position: absolute;
+	content: '';
+	top: 100%;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	width: 971px;
+	height: 122px;
+	background: url("../images/img-bg-10.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.total-box{
+	padding: 50px 50px 66px;
+}
+.total-box span{
+	display: block;
+	margin: 0 0 6px;
+	text-transform: uppercase;
+	color: #bfcaff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.9;
+	letter-spacing: 0.3em;
+}
+.total-box strong{
+	display: block;
+	text-shadow: 0 4px 0 rgba(7, 13, 51, 0.64);
+	color: #bfcaff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 70px;
+	font-weight: 300;
+	line-height: 1;
+	text-transform: uppercase;
+}
+.table-box{
+	max-width: 795px;
+	margin: 0 auto 65px;
+}
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+.table th{
+	height: 65px;
+	color: #bfcaff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.2;
+	vertical-align: middle;
+	padding: 0 0;
+	text-align: left;
+	border-bottom: 1px solid #1e264a;
+}
+.table td{
+	text-align: left;
+	padding: 10px 0;
+	vertical-align: middle;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.2;
+	height: 53px;
+	color: #bfcaff;
+}
+.table th:first-child,
+.table td:first-child{
+	padding: 10px 5px 10px 15px;
+	width: 50px;
+}
+.table th:first-child{
+	padding: 0 5px 0 10px;
+}
+.table .sub-head td{
+	vertical-align: middle;
+	color: #bfcaff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 1.2;
+	padding: 30px 0 23px;
+	text-align: left;
+}
+.sub-head span{
+	display: block;
+}
+.sub-head strong{
+	display: block;
+	margin: 0 0 10px;
+	font-size: 20px;
+	font-weight: 300;
+}
+.table th:last-child,
+.table td:last-child{
+	width: 160px;
+}
+.table td a{
+	color: #83c9ff;
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.table td a:hover{
+	text-decoration: underline;
+}
+.table td.complate a{
+	display: block;
+	color: #83c9ff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 51px;
+	text-transform: uppercase;
+	height: 53px;
+	background: -webkit-linear-gradient(rgba(0, 105, 172, 0.21) 0%, transparent 100%);
+	background: -o-linear-gradient(rgba(0, 105, 172, 0.21) 0%, transparent 100%);
+	background: linear-gradient(rgba(0, 105, 172, 0.21) 0%, transparent 100%);
+	border: 1px solid #83c9ff;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	letter-spacing: 0.055em;
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.table td.complate a:hover{
+	color: #bfcaff;
+	background: #00a3d2;
+	text-decoration: none;
+	border: 1px solid #00a3d2;
+}
+.table td em{
+	font-style: normal;
+	text-transform: uppercase;
+	color: #465282;
+}
+.table .table-row td{
+	position: relative;
+	z-index: 1;
+}
+.table .table-row td:first-child:after{
+	position: absolute;
+	content: '';
+	top: 10px;
+	bottom: 10px;
+	left: 0;
+	width: 619px;
+	background: url("../images/img-bg-13.png") no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	border-radius: 3px;
+	z-index: -1;
+}
+.winners-page #footer{
+	padding: 67px 0 51px;
+	background: url("../images/img-bg-11.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	background-position: 0 100%;
+}
 
 /* end winners-page */
 @media screen and (min-width: 891px){
@@ -2907,6 +3128,48 @@ code em{
 	.lang-box{
 		display: none;
 	}
+	.winners-page #wrapper{
+		-webkit-background-size: 200%;
+		background-size: 200%;
+		background-position: 50% 0;
+	}
+	.winners-page .inner-main .logo-box{
+		width: 262px;
+	}
+	.winners-page .main-title{
+		font-size: 63px;
+	}
+	.winners-page .main-title em{
+		font-size: 68px;
+	}
+	.winners-page .main-title span{
+		font-size: 54px;
+	}
+	.winners-page .subtitle,
+	.congratulation-section .title-section small,
+	.total-box span{
+		font-size: 24px;
+	}
+	.congratulation-section .logo-box{
+		width: 150px;
+	}
+	.congratulation-section .title-section{
+		font-size: 76px;
+	}
+	.total-box{
+		padding: 50px 30px 66px;
+	}
+	.total-box strong{
+		font-size: 74px;
+	}
+	.winners-page #footer{
+		-webkit-background-size: 200%;
+		background-size: 200%;
+		background-position: 50% 100%;
+	}
+	.winners-page #header.active #nav{
+		background: #050d35;
+	}
 }
 @media screen and (max-width: 750px){
 	body{
@@ -2929,5 +3192,8 @@ code em{
 	.arrow-angle-2:after{
 		height: 1373px;
 		top: -1373px;
+	}
+	.table .table-row td:first-child:after{
+		width: 492px;
 	}
 }
