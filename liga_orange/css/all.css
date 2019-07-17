@@ -1591,6 +1591,20 @@ ul{
 	vertical-align: top;
 	margin: 0 0 13px;
 }
+.foot-logo svg path,
+.foot-logo svg rect,
+.foot-logo svg polygon{
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.foot-logo:hover svg path,
+.foot-logo:hover svg rect,
+.foot-logo:hover svg polygon{
+	fill: #f74100;
+}
 .logo-link{
 	color: #fff;
 	font-size: 14px;
@@ -2485,6 +2499,7 @@ ul{
 	font-size: 24px;
 	padding: 0 70px;
 }
+/* background-color: #f74100; */
 @media screen and (max-width: 980px){
 	.winners-page .main-section{
 		background: #000 url("../images/img-bg-22.jpg") no-repeat;
@@ -2782,11 +2797,11 @@ ul{
 		padding: 0;
 	}
 	.table th{
-		font-size: 16px;
+		/* font-size: 16px; */
 		padding: 0 5px;
 	}
 	.table td{
-		font-size: 18px;
+		font-size: 12px;
 		padding: 0 5px;
 	}
 	.table th:first-child,

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @font-face {
   font-family: 'Menlo';
   src: url('../fonts/Menlo-Regular.eot?#iefix') format('embedded-opentype'),
@@ -8,8 +9,19 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Athelas-Regular';
+  src: url('../fonts/Athelas-Regular.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/Athelas-Regular.woff') format('woff'),
+			 url('../fonts/Athelas-Regular.ttf')  format('truetype'),
+			 url('../fonts/Athelas-Regular.svg#Athelas-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* font-family: 'Roboto Condensed', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Athelas-Regular'; */
 
 html {
 	-webkit-text-size-adjust: none;
@@ -22,8 +34,6 @@ body {
 	color:#fff;
 	font:16px/1.2 'Roboto Condensed', Arial, Helvetica, sans-serif;
 	background:#000 url("../images/img-bg-01-1.png") no-repeat;
-	/* -webkit-background-size: cover;
-	background-size: cover; */
 	background-position: 50% 0;
 	min-width: 750px !important;
 	height: 100%;
@@ -32,7 +42,6 @@ img {
 	border-style:none;
 }
 a {
-	/* color: #00a3d2; */
 	color: #fff;
 	outline:none;
 	text-decoration: none;
@@ -2098,6 +2107,65 @@ code em{
 	height: auto;
 	vertical-align: top;
 }
+/* winners-page */
+
+.winners-page{
+	background: #050d35;
+}
+.winners-page #wrapper{
+	background: url("../images/img-bg-12.jpg") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.winners-page .main-section{
+	text-align: center;
+	padding: 0;
+}
+.winners-page .inner-main{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 62px 0 0;
+}
+.winners-page .inner-main .logo-box{
+	margin: 0 auto 5px;
+	display: block;
+	width: 212px;
+}
+.winners-page .inner-main .logo-box img{
+	width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+.winners-page .main-title{
+	font-family: 'Athelas-Regular';
+	font-weight: 400;
+	line-height: 1;
+	font-size: 53px;
+	text-transform: uppercase;
+	margin: 0 0 0;
+}
+.winners-page .main-title em{
+	font-style: normal;
+	font-size: 58px;
+}
+.winners-page .main-title span{
+	display: block;
+	font-size: 44px;
+}
+.winners-page .subtitle{
+	display: block;
+	margin: 0 0 0;
+	color: #bfcaff;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.5;
+	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 0.28em;
+}
+
+
+/* end winners-page */
 @media screen and (min-width: 891px){
 	.item-team .inner-team:hover{
 		box-shadow: 0 15px 73px rgba(255, 255, 255, 0.68);
@@ -2107,11 +2175,7 @@ code em{
 		-ms-transition: box-shadow .2s linear .7s;
 		-o-transition: box-shadow .2s linear .7s;
 		transition: box-shadow .2s linear .7s;
-		/* overflow: hidden; */
 	}
-	/* .item-team .inner-team:hover .front{
-		animation: none;
-	} */
 	.inner-team:hover > .front{
 		transform: perspective(600px) rotateY(-180deg);
 	}
@@ -2139,9 +2203,6 @@ code em{
 	}
 	body{
 		font-size: 28px;
-		/* background:#000 url("../images/img-bg-01.png") no-repeat;
-		-webkit-background-size: 100%;
-		background-size: 100%; */
 	}
 	.container,
 	.container-full{
@@ -2696,7 +2757,6 @@ code em{
 	.arrow-top,
 	.arrow-top-2{
 		width: 1px;
-		/* height: 1330px; */
 		height: 1330px;
 		background: #fff;
 		top: -117px;
@@ -2851,10 +2911,6 @@ code em{
 @media screen and (max-width: 750px){
 	body{
 		font-size: 28px;
-		/* background:#000 url("../images/img-bg-01.png") no-repeat;
-		-webkit-background-size: 250%;
-		background-size: 250%;
-		background-position: 50% 0; */
 	}
 	.show-mob{
 		display: block;
