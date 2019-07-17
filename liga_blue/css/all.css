@@ -2312,7 +2312,7 @@ code em{
 }
 .table th:last-child,
 .table td:last-child{
-	width: 160px;
+	/* width: 160px; */
 }
 .table td a{
 	color: #83c9ff;
@@ -2326,23 +2326,16 @@ code em{
 	text-decoration: underline;
 }
 .table td.complate a{
-	display: block;
+	display: inline-block;
+	vertical-align: top;
 	color: #83c9ff;
+	border-bottom: 1px solid #000;
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
 	font-weight: 300;
-	line-height: 51px;
+	line-height: 1.2;
 	text-transform: uppercase;
-	height: 53px;
-	background: -webkit-linear-gradient(rgba(0, 105, 172, 0.21) 0%, transparent 100%);
-	background: -o-linear-gradient(rgba(0, 105, 172, 0.21) 0%, transparent 100%);
-	background: linear-gradient(rgba(0, 105, 172, 0.21) 0%, transparent 100%);
-	border: 1px solid #83c9ff;
-	border-radius: 5px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	text-align: center;
+	position: relative;
 	letter-spacing: 0.055em;
 	-webkit-transition: all .2s linear;
 	-moz-transition: all .2s linear;
@@ -2351,10 +2344,20 @@ code em{
 	transition: all .2s linear;
 }
 .table td.complate a:hover{
-	color: #bfcaff;
-	background: #00a3d2;
 	text-decoration: none;
-	border: 1px solid #00a3d2;
+}
+.table td.complate a:after{
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1px;
+	background: url("../images/icon-07.png") repeat-x;
+	opacity: 1;
+}
+.table td.complate a:hover:after{
+	opacity: 0;
 }
 .table td em{
 	font-style: normal;
@@ -2371,7 +2374,7 @@ code em{
 	top: 10px;
 	bottom: 10px;
 	left: 0;
-	width: 619px;
+	width: 795px;
 	background: url("../images/img-bg-13.png") no-repeat;
 	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
@@ -3162,6 +3165,9 @@ code em{
 	.total-box strong{
 		font-size: 74px;
 	}
+	.table-box{
+		overflow: hidden;
+	}
 	.winners-page #footer{
 		-webkit-background-size: 200%;
 		background-size: 200%;
@@ -3193,7 +3199,10 @@ code em{
 		height: 1373px;
 		top: -1373px;
 	}
+	.table-box{
+		overflow: visible;
+	}
 	.table .table-row td:first-child:after{
-		width: 492px;
+		width: 658px;
 	}
 }
