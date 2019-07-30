@@ -105,11 +105,11 @@
 							<table class="table" id="table-sort">
 								<thead>
 									<tr>
-										<th><strong><span>Championship points</span></strong></th>
-										<th><span>Price</span></th>
-										<th class="hide-mob"><span>Sold</span></th>
-										<th class="hide-mob"><span>Potential cost</span></th>
-										<th><span>Multiplier</span></th>
+										<th aria-sort="ascending"><strong><span>Championship points</span></strong></th>
+										<th aria-sort="ascending"><span>Price</span></th>
+										<th aria-sort="ascending" class="hide-mob"><span>Sold</span></th>
+										<th aria-sort="ascending" class="hide-mob"><span>Potential cost</span></th>
+										<th aria-sort="ascending"><span>Multiplier</span></th>
 										<th></th>
 									</tr>
 								</thead>
@@ -349,8 +349,8 @@
 		    </div>
 		</div>
 		<script>
-			table = document.getElementById('table-sort');
-			new Tablesort(table);
+			tableDescend = document.getElementById('table-sort');
+			new Tablesort(tableDescend, { descending: true });
 		</script>
 	</body>
 </html>
